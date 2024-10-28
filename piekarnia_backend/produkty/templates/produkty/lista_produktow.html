@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasze Produkty</title>
+</head>
+<body>
+    <h1>Nasze Produkty</h1>
+    <ul>
+        {% for produkt in produkty %}
+            <li>
+                <h2>{{ produkt.nazwa }}</h2>
+                <p>{{ produkt.opis }}</p>
+                <p>Cena: {{ produkt.cena }} PLN</p>
+                {% if produkt.obrazek %}
+                    <img src="{{ produkt.obrazek.url }}" alt="{{ produkt.nazwa }}">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
